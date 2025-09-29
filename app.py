@@ -31,7 +31,7 @@ if prompt := st.chat_input("What would you like to know?"):
         st.markdown(prompt)
 
     # --- Call the Flask API ---
-    api_url = "http://127.0.0.1:5000/chat"
+    api_url = "https://food-delivery-chatbot.onrender.com/chat"
     headers = {"Content-Type": "application/json"}
     data = {"message": prompt}
 
@@ -49,3 +49,4 @@ if prompt := st.chat_input("What would you like to know?"):
 
     except requests.exceptions.RequestException as e:
         st.error(f"Could not connect to the chatbot API. Please make sure the Flask server is running. Error: {e}")
+
